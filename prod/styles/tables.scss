@@ -1,0 +1,112 @@
+@import 'mixins/mixins.scss';
+@import 'variables.scss';
+
+/* Таблицы */
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $spacer;
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+.table--sm {
+  th,
+  td {
+    padding: $table-sm-cell-padding;
+  }
+}
+
+.table--bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: (2 * $table-border-width);
+    }
+  }
+}
+
+.table--striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: $table-bg-accent;
+  }
+}
+
+.table--hover {
+  tbody tr {
+    @include hover {
+      background-color: $table-bg-hover;
+    }
+  }
+}
+
+@include table-row-variant(active, $table-bg-active);
+@include table-row-variant(success, $state-success-bg);
+@include table-row-variant(info, $state-info-bg);
+@include table-row-variant(warning, $state-warning-bg);
+@include table-row-variant(danger, $state-danger-bg);
+
+.thead--inverse {
+  th {
+    color: $table-inverse-color;
+    background-color: $table-inverse-bg;
+  }
+}
+
+.thead--default {
+  th {
+    color: $table-head-color;
+    background-color: $table-head-bg;
+  }
+}
+
+.table--inverse {
+  color: $table-inverse-color;
+  background-color: $table-inverse-bg;
+
+  th,
+  td,
+  thead th {
+    border-color: $body-bg;
+  }
+
+  &.table--bordered {
+    border: 0;
+  }
+}
+
+.table--responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &.table--bordered {
+    border: 0;
+  }
+}

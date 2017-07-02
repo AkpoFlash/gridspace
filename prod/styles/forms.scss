@@ -1,0 +1,324 @@
+@import 'mixins/mixins.scss';
+@import 'variables.scss';
+
+label {
+  cursor: pointer;
+  position: relative;
+}
+
+input, textarea{
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.input{
+  padding: $input-padding-x $input-padding-y;
+  width: $input-size-x;
+  height: $input-size-y;
+  display: block;
+}
+
+.input--default{
+  border-width: 1px;
+  border-style: solid;
+  &:focus{
+    &:valid{
+    outline-color: $brand-success;
+    }
+    &:invalid{
+      outline-color: $brand-danger;
+    }
+  }
+}
+
+.input--checkbox{
+  vertical-align: top;
+  position: relative;
+  margin: 5px 3px 0 0;
+  width: 50px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  outline: none;
+  &:not(checked){
+    opacity: 1;
+    &::before{
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 50px;
+      height: 26px;
+      border-radius: 13px;
+      background: #ddd;
+      box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 2px 5px rgba(0,0,0,.3);
+      transition: all .2s;
+    }
+  }
+  &:checked{
+    &::before{
+      background: $brand-success;
+    }
+    &::after{
+      left: 23px;
+    }
+  }
+}
+
+.input--radio{
+  vertical-align: top;
+  position: relative;
+  margin: 5px 3px 0 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:not(checked){
+    opacity: 1;
+    &::before{
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #CDD1DA;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    }
+    &::after{
+      @include transition(.3s);
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+    }
+  }
+  &:checked{
+    &::before{
+    }
+    &::after{
+      background: $brand-success;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+    }
+  }
+}
+
+.input--range{
+  background-color: transparent;
+  &:focus{
+    outline: none;
+  }
+  &::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: -7px;
+    border: 1px solid #CDD1DA;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+  }
+  &::-moz-range-thumb{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+  }
+  &::-ms-track{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+  }
+  &::-moz-range-thumb{
+    height: 22px;
+    width: 22px;
+    background: $white;
+    cursor: pointer;
+  }
+  &::-ms-thumb{
+    height: 22px;
+    width: 22px;
+    background: $white;
+    cursor: pointer;
+  }
+  &::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 1.3px;
+  }
+  &:focus::-webkit-slider-runnable-track{
+    background: #ddd;
+  }
+  &::-moz-range-track{
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 1.3px;
+  }
+  &::-ms-track{
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  &::-ms-fill-lower{
+    background: #ddd;
+    border-radius: 2.6px;
+  }
+  &:focus::-ms-fill-lower{
+    background: #ddd;
+  }
+  &::-ms-fill-upper{
+    background: #ddd;
+    border-radius: 2.6px;
+  }
+  &:focus::-ms-fill-upper{
+    background: #ddd;
+  }
+}
+
+.button{
+  @include transition(.3s);
+  @include button-variant($button-default-color, $button-default-bg, $button-default-border);
+  display: inline-block;
+  width: $button-size-x;
+  height: $button-size-y;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  padding: $button-padding-x $button-padding-y;
+  font-weight: 300;
+  white-space: nowrap;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.button--primary{
+  @include button-variant($button-primary-color,$button-primary-bg,$button-primary-border);
+}
+
+.button--success{
+  @include button-variant($button-success-color,$button-success-bg,$button-success-border);
+}
+
+.button--danger{
+  @include button-variant($button-danger-color,$button-danger-bg,$button-danger-border);
+}
+
+.button--warning{
+  @include button-variant($button-warning-color,$button-warning-bg,$button-warning-border);
+}
+
+.button--info{
+  @include button-variant($button-info-color,$button-info-bg,$button-info-border);
+}
+
+.button-outline--primary{
+  @include button-outline-variant($button-primary-bg);
+}
+
+.button-outline--success {
+  @include button-outline-variant($button-success-bg);
+}
+
+.button-outline--danger {
+  @include button-outline-variant($button-danger-bg);
+}
+
+.button-outline--warning {
+  @include button-outline-variant($button-warning-bg);
+}
+
+.button-outline--info {
+  @include button-outline-variant($button-info-bg);
+}
+
+.button--full{
+  border: 2px solid currentcolor;
+  border-radius: 5px;
+  color: currentcolor;
+}
+
+.button--underline{
+  color: $black;
+  background-color: $white;
+  border-bottom: 2px solid currentcolor;
+  &:hover,&:focus{
+    background-color: $gray;
+    color: $black;
+  }
+}
+
+.button--arrow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button--lg{
+  @include button-size($button-size-x-lg, $button-size-y-lg, $button-padding-y-lg, $button-padding-x-lg, $font-size-lg, 0);
+}
+.button--sm{
+  @include button-size($button-size-x-sm, $button-size-y-sm, $button-padding-y-sm, $button-padding-x-sm, $font-size-sm, 0);
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--block + .button--block {
+  margin-top: $button-block-spacing-y;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.button--block {
+    width: 100%;
+  }
+}
+
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form__title{
+  width: $input-size-x;
+  text-transform: capitalize;
+  font-weight: 300;
+  text-align: center;
+}

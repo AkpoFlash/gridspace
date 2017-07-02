@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <form class="form c-white h-500" method="post" id="ui-order">
+      <span class="form__title">Order title</span>
+      <input type="text" class="input input--default" placeholder="First Name">
+      <input type="text" class="input input--default" placeholder="Second Name">
+      <input type="text" class="input input--default" placeholder="Login">
+      <input type="text" class="input input--default" placeholder="Password">
+      <input type="text" class="input input--default" placeholder="Repeat Password">
+      <div class="block text-center">
+        <label for="spam">Want have any spam?</label>
+        <input type="checkbox" id="spam" class="input input--checkbox inline" checked>
+      </div>
+      <input type="button" class="button button--primary bg-green" value="Order Now!" onclick="modal('window window--success', {text: 'Success order!', confirm: 'Ok', cancel: 'Cancel'});">
+    </form>
+    <script>
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-order');
+    var templateInsertAll = document.querySelectorAll('ui-order');
+
+    templateInsertAll.forEach( (templateInsert) => templateInsert.appendChild(template.cloneNode(true)));
+    </script>
+  </body>
+</html>

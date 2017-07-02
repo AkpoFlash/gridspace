@@ -1,0 +1,20 @@
+@mixin window-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+}
+
+@mixin window-outline-variant($color) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border-color: $color;
+}
+
+@mixin window-size($window-size-x, $window-size-y, $padding-y, $padding-x, $font-size, $border-radius) {
+  width: $window-size-x;
+  height: $window-size-y;
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  @include border-radius($border-radius);
+}

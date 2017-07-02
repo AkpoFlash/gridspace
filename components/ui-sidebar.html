@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <div class="sidebar" id="ui-sidebar">
+      <div class="app-menu">
+        <div class="p-20 text-justify">
+          <h3>New message</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis eum obcaecati, sint laborum sequi recusandae iusto, voluptatibus repellendus corrupti neque modi nisi voluptate eaque rem eligendi provident nulla quasi dicta ut consectetur. Consequuntur neque.
+          <p>From Bill</p>
+        </div>
+        <div class="blind app-menu__blind">
+            <span class="blind__line1"></span>
+            <span class="blind__line2"></span>
+        </div>
+      </div>
+      <div class="notification-popup blind__notification-popup">
+        You have got mail!
+        <div class="notification-popup__triangle notification-popup__triangle--arrow-left"></div>
+      </div>
+    </div>
+    <script>
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-sidebar');
+    var templateInsertAll = document.querySelectorAll('ui-sidebar');
+
+    templateInsertAll.forEach( (templateInsert) => templateInsert.appendChild(template.cloneNode(true)));
+    </script>
+  </body>
+</html>

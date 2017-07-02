@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <div class="carusel carusel--line" id="ui-slider-line">
+      <h3 class="big">Services</h3>
+      <div class="slider slider--line">
+        <a href="#" class="slider__slide slider__slide--line">
+          Slide 1
+        </a><!--
+        --><a href="#" class="slider__slide slider__slide--line">
+          Slide 2
+        </a><!--
+        --><a href="#" class="slider__slide slider__slide--line">
+          Slide 3
+        </a><!--
+        --><a href="#" class="slider__slide slider__slide--line">
+          Slide 4
+        </a><!--
+        --><a href="#" class="slider__slide slider__slide--line">
+          Slide 5
+        </a><!--
+        --><a href="#" class="slider__slide slider__slide--line">
+          Slide 6
+        </a><!--
+        -->
+      </div>
+      <div class="arrow__wrapper arrow__wrapper--left">
+        <svg class="slider__arrow slider__arrow--left" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprites.svg#down-arrow"></use>
+        </svg>
+      </div>
+      <div class="arrow__wrapper arrow__wrapper--right">
+        <svg class="slider__arrow slider__arrow--right" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprites.svg#down-arrow"></use>
+        </svg>
+      </div>
+    </div>
+    <script>
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-slider-line');
+    var templateInsertAll = document.querySelectorAll('ui-slider-line');
+
+    templateInsertAll.forEach( (templateInsert) => templateInsert.appendChild(template.cloneNode(true)));
+    </script>
+  </body>
+</html>

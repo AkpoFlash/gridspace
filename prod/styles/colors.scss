@@ -1,0 +1,37 @@
+@import 'mixins/mixins.scss';
+@import 'variables.scss';
+
+/* ЦВЕТА ДЛЯ ТЕКСТА И ФОНА */
+
+$color-list: white gray black red orange yellow green blue teal pink purple primary success danger warning info muted;
+$color-map: (
+  white: $white,
+  gray: $gray,
+  muted: $gray,
+  black: $black,
+  red: $red,
+  danger: $brand-danger,
+  orange: $orange,
+  warning: $brand-warning,
+  yellow: $yellow,
+  green: $green,
+  success: $brand-success,
+  blue: $blue,
+  primary: $brand-primary,
+  teal: $teal,
+  info: $brand-info,
+  pink: $pink,
+  purple: $purple,
+);
+
+@each $color in $color-list{
+  .bg-#{$color}{
+    background-color: map-get($color-map, $color) !important;
+  }
+}
+
+@each $color in $color-list{
+  .c-#{$color}{
+    color: map-get($color-map, $color) !important;
+  }
+}

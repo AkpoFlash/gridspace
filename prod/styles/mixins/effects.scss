@@ -1,0 +1,60 @@
+@mixin transition($duration: .5s, $function: linear, $properties: all){
+  transition: $properties $duration $function;
+}
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin hover {
+    &:hover { @content; }
+}
+
+@mixin hover-focus {
+  @if $enable-hover-media-query {
+    &:focus { @content; }
+    @include hover { @content; }
+  }
+  @else {
+    &:focus,
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin plain-hover-focus {
+  @if $enable-hover-media-query {
+    &,
+    &:focus {
+      @content;
+    }
+    @include hover { @content; }
+  }
+  @else {
+    &,
+    &:focus,
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-focus-active {
+  @if $enable-hover-media-query {
+    &:focus,
+    &:active {
+      @content;
+    }
+    @include hover { @content; }
+  }
+  @else {
+    &:focus,
+    &:active,
+    &:hover {
+      @content;
+    }
+  }
+}

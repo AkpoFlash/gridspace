@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <nav class="menu" id="ui-menu">
+      <span class="logo menu__logo">Logo</span>
+      <div class="hamburger header__hamburger">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </div>
+      <ul class="menu__list">
+        <li class="menu__element"><a class="menu__link" href="#about">List 1</a></li>
+        <li class="menu__element"><a class="menu__link" href="#services">List 2</a></li>
+        <li class="menu__element"><a class="menu__link" href="#contact">List 3</a></li>
+      </ul>
+    </nav>
+    <script>
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-menu');
+    var templateInsertAll = document.querySelectorAll('ui-menu');
+
+    templateInsertAll.forEach( (templateInsert) => templateInsert.appendChild(template.cloneNode(true)));
+    </script>
+  </body>
+</html>

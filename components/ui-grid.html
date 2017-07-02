@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <div id="ui-grid">
+      <div class="grid text-center">
+        <header class="grid__item grid__item--header">
+          <section class="grid__item grid__item--top">
+            Header top
+          </section>
+          <section class="grid__item grid__item--bottom">
+            Header bottom
+          </section>
+        </header>
+        <nav class="grid__item grid__item--nav">
+          Nav
+        </nav>
+        <main class="grid__item grid__item--main">
+          <section class="grid__item grid__item--left">
+            Main left
+          </section>
+          <section class="grid__item grid__item--center">
+            Main center
+          </section>
+          <section class="grid__item grid__item--right">
+            Main right
+          </section>
+        </main>
+        <footer class="grid__item grid__item--footer">
+          Footer
+        </footer>
+      </div>
+    </div>
+    <script>
+
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-grid');
+    var templateInsertAll = document.querySelectorAll('ui-grid');
+
+    templateInsertAll.forEach( (templateInsert) => templateInsert.appendChild(template.cloneNode(true)));
+    </script>
+  </body>
+</html>

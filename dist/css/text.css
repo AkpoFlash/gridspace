@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/* ТЕКСТ */
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  color: #000;
+  line-height: 2em;
+  word-wrap: break-word; }
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    body {
+      font-weight: 200; } }
+
+h1 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+h2 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+h3 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+h4 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+h5 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+h6 {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  padding: 5px 0;
+  margin: 0;
+  line-height: 2em; }
+
+a {
+  color: currentcolor;
+  outline: none;
+  display: inline-block;
+  line-height: 1em; }
+
+article {
+  position: relative;
+  padding: 40px 50px;
+  text-align: left; }
+  @media (max-width: 500px) {
+    article {
+      padding: 40px 10px; } }
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px; }
+  ul li, ol li {
+    margin: 0;
+    padding: 0; }
+
+hr {
+  border-width: 0;
+  height: 1px;
+  background-color: currentcolor; }
+
+.s-12 {
+  font-size: 12px; }
+
+.s-14 {
+  font-size: 14px; }
+
+.s-16 {
+  font-size: 16px; }
+
+.s-18 {
+  font-size: 18px; }
+
+.s-20 {
+  font-size: 20px; }
+
+.s-22 {
+  font-size: 22px; }
+
+.s-24 {
+  font-size: 24px; }
+
+.s-26 {
+  font-size: 26px; }
+
+.s-28 {
+  font-size: 28px; }
+
+.s-30 {
+  font-size: 30px; }
+
+.s-32 {
+  font-size: 32px; }
+
+.s-34 {
+  font-size: 34px; }
+
+.s-36 {
+  font-size: 36px; }
+
+.s-38 {
+  font-size: 38px; }
+
+.s-40 {
+  font-size: 40px; }
+
+.list-unstyled {
+  list-style: none; }
+
+.list-inline li {
+  display: inline-block; }
+
+.lg {
+  font-size: 1.4em !important; }
+
+.md {
+  font-size: 1em !important; }
+
+.sm {
+  font-size: .6em !important; }
+
+.text-justify {
+  text-align: justify !important; }
+
+.text-nowrap {
+  white-space: nowrap !important; }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-underline {
+  text-decoration: underline !important; }
+
+.text-nounderline {
+  text-decoration: none !important; }
+
+.text-lowercase {
+  text-transform: lowercase !important; }
+
+.text-uppercase {
+  text-transform: uppercase !important; }
+
+.text-capitalize {
+  text-transform: capitalize !important; }
+
+.font-weight-normal {
+  font-weight: normal; }
+
+.font-weight-bold {
+  font-weight: bold; }
+
+.font-italic {
+  font-style: italic; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.text-white {
+  color: #fff !important; }
+
+a.text-white:focus, a.text-white:hover {
+  color: #e6e6e6 !important; }
+
+.text-black {
+  color: #000 !important; }
+
+a.text-black:focus, a.text-black:hover {
+  color: black !important; }
+
+.text-gray {
+  color: #464a4c !important; }
+
+a.text-gray:focus, a.text-gray:hover {
+  color: #2e3031 !important; }
+
+.text-gray-dark {
+  color: #292b2c !important; }
+
+a.text-gray-dark:focus, a.text-gray-dark:hover {
+  color: #101112 !important; }
+
+.text-muted {
+  color: #636c72 !important; }
+
+a.text-muted:focus, a.text-muted:hover {
+  color: #4b5257 !important; }
+
+.text-primary {
+  color: #0275d8 !important; }
+
+a.text-primary:focus, a.text-primary:hover {
+  color: #025aa5 !important; }
+
+.text-success {
+  color: #5cb85c !important; }
+
+a.text-success:focus, a.text-success:hover {
+  color: #449d44 !important; }
+
+.text-info {
+  color: #5bc0de !important; }
+
+a.text-info:focus, a.text-info:hover {
+  color: #31b0d5 !important; }
+
+.text-warning {
+  color: #f0ad4e !important; }
+
+a.text-warning:focus, a.text-warning:hover {
+  color: #ec971f !important; }
+
+.text-danger {
+  color: #d9534f !important; }
+
+a.text-danger:focus, a.text-danger:hover {
+  color: #c9302c !important; }

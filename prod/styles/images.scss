@@ -1,0 +1,14 @@
+@import 'mixins/mixins.scss';
+@import 'variables.scss';
+
+/* ИЗОБРАЖЕНИЯ */
+
+img{
+  pointer-events: none;
+}
+
+svg{
+  fill: currentcolor;
+  width: 100px;
+  height: 100px;
+}

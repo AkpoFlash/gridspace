@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <div id="ui-test" class="c-success s-30">
+      Framework is working
+    </div>
+    <script>
+    var localDocument = document.currentScript.ownerDocument;
+    var template = localDocument.getElementById('ui-test');
+    var templateInsertAll = document.querySelectorAll('ui-test');
+
+    templateInsertAll.forEach( (templateInsert) => {
+        templateInsert.innerHTML = "";
+        return templateInsert.appendChild(template.cloneNode(true));
+      }
+    );
+    </script>
+  </body>
+</html>

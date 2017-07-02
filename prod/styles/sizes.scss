@@ -1,0 +1,55 @@
+@import 'mixins/mixins.scss';
+@import 'variables.scss';
+
+/* РАЗМЕРЫ */
+
+$width-list: 100 200 300 400 500 600 700 800 900 1000;
+$height-list: 100 200 300 400 500 600 700 800 900 1000;
+
+@each $width in $width-list{
+  .w-#{$width}{
+    width: #{$width}px;
+  }
+}
+
+@each $height in $height-list{
+  .h-#{$height}{
+    height: #{$height}px;
+  }
+}
+
+@for $i from 1 through 20{
+  .m-#{$i}{
+    margin: #{$i}px;
+  }
+}
+
+.m-sm{
+  padding: 5px 10px;
+}
+
+.m-md{
+  padding: 10px 15px;
+}
+
+.m-lg{
+  padding: 15px 20px;
+}
+
+@for $i from 1 through 20{
+  .p-#{$i}{
+    padding: #{$i}px;
+  }
+}
+
+.p-sm{
+  padding: 5px 10px;
+}
+
+.p-md{
+  padding: 10px 15px;
+}
+
+.p-lg{
+  padding: 15px 20px;
+}
